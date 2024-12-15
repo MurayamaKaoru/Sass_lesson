@@ -1,30 +1,60 @@
 @use 'variable';
 @use 'mixin';
 
-.purple {
-  background-color: variable.$purple;
+.inner {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+}
+
+@each $class in variable.$classNames {
+  $index_key: index(variable.$classNames , $class);
+
+  .#{$class} {
+    background-color: nth(variable.$buttonColor, $index_key);
+  }
 }
 
 .header {
-  display: flex;
   background-color: variable.$navy;
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: right;
-
+  font: {
+    size: 0;
+    decoration: none;
+  }
 
   &__box {
     padding: 10px;
     background-color: variable.$white;
-    margin: 0 0 0 auto;
+    margin: 20px 20px 20px auto;
 
-    &__block{
+    &__btn {
       @include mixin.headerBox();
 
       &:first-child {
         margin-left: 0;
       }
     }
+  }
+}
+
+.sidebar {
+  height: 250px;
+  width: 150px;
+  background-color: variable.$green;
+}
+
+.main {
+  height: 250px;
+  width: 250px;
+  background-color: variable.$red;
+
+  &__box {
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+
+  &__btn {
+    height: 40px;
+    width: 140px;
   }
 }
