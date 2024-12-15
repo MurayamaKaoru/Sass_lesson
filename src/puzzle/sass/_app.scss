@@ -1,0 +1,30 @@
+@use 'variable';
+@use 'mixin';
+
+.purple {
+  background-color: variable.$purple;
+}
+
+.header {
+  display: flex;
+  background-color: variable.$navy;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: right;
+
+
+  &__box {
+    padding: 10px;
+    background-color: variable.$white;
+    margin: 0 0 0 auto;
+
+    &__block{
+      @include mixin.headerBox();
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
