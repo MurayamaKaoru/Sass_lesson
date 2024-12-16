@@ -1,6 +1,18 @@
+@use 'variable';
+
 @mixin headerBox() {
   display: inline-block;
   height: 40px;
   width: 40px;
   margin-left: 10px;
+}
+
+@mixin autoColor() {
+  @each $class in variable.$classNames {
+    $index_key: index(variable.$classNames , $class);
+  
+    .#{$class} {
+      background-color: nth(variable.$buttonColor, $index_key);
+    }
+  }
 }
