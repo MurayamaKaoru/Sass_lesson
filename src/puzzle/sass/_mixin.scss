@@ -1,0 +1,11 @@
+@use 'variable';
+
+@mixin autoColor() {
+  @each $class in variable.$classNames {
+    $index_key: index(variable.$classNames , $class);
+  
+    .#{$class} {
+      background-color: nth(variable.$buttonColor, $index_key);
+    }
+  }
+}

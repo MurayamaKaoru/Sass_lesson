@@ -1,0 +1,74 @@
+@use 'variable';
+@use 'mixin';
+
+@include mixin.autoColor();
+
+$mainHight: 250px;
+
+.inner {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: variable.$navy;
+  font-size: 0;
+  text-decoration: none;
+
+  &__box {
+    padding: 10px;
+    background-color: variable.$white;
+    margin: 20px 20px 20px auto;
+
+    &__btn {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+.sidebar {
+  height: $mainHight;
+  width: 150px;
+  background-color: variable.$green;
+}
+
+.main {
+  height: $mainHight;
+  width: 250px;
+  background-color: variable.$red;
+
+  &__box {
+    line-height: 0;
+    margin: 40px auto auto 40px;
+
+    &__child {
+      margin-top: 10px;
+      padding: 5px;
+      background-color: variable.$white;
+      display: inline-block;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &>div {
+        height: 40px;
+        width: 140px;
+      }
+    }
+  }
+}
+
+.footer {
+  height: 100px;
+  background-color: variable.$brown;
+}
