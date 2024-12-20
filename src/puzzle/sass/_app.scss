@@ -11,11 +11,8 @@
 
 .header {
   background-color: variable.$navy;
-
-  font: {
-    size: 0;
-    decoration: none;
-  }
+  font-size: 0;
+  text-decoration: none;
 
   &__box {
     padding: 10px;
@@ -34,6 +31,7 @@
     }
   }
 }
+
 
 .sidebar {
   height: 250px;
@@ -59,8 +57,8 @@
       &:first-child {
         margin-top: 0;
       }
-      
-      & > div {
+
+      &>div {
         height: 40px;
         width: 140px;
       }
