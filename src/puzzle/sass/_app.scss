@@ -1,13 +1,13 @@
 @use 'variable';
 @use 'mixin';
 
+@include mixin.autoColor();
+
 .inner {
   display: flex;
   width: 400px;
   margin: 0 auto;
 }
-
-@include mixin.autoColor();
 
 .header {
   background-color: variable.$navy;
@@ -23,7 +23,10 @@
     margin: 20px 20px 20px auto;
 
     &__btn {
-      @include mixin.headerBox();
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      margin-left: 10px;
 
       &:first-child {
         margin-left: 0;
@@ -44,18 +47,24 @@
   background-color: variable.$red;
 
   &__box {
+    line-height: 0;
     margin: 40px auto auto 40px;
 
     &__child {
+      margin-top: 10px;
       padding: 5px;
       background-color: variable.$white;
       display: inline-block;
-    }
-  }
 
-  &__btn {
-    height: 40px;
-    width: 140px;
+      &:first-child {
+        margin-top: 0;
+      }
+      
+      & > div {
+        height: 40px;
+        width: 140px;
+      }
+    }
   }
 }
 
